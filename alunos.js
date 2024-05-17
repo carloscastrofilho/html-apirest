@@ -1,55 +1,67 @@
 // artigo base : https://diegomagalhaes-dev.medium.com/como-consumir-uma-api-rest-utilizando-javascript-e2728c207eb
 
-const ul = document.querySelector('[data-js="alunos"]');
+const table = document.querySelector('.showData');
 
-const filterImput = document.querySelector("#filter");
+const filterImput = document.querySelector('#filter');
 
 const timeStamp = Date.now().toString();
 
-const getPosts = async (param) => {
-    const response = await fetch(`http://localhost/dsi/aula-3/apirest.php/person`)
-    return response.json();
-}
+const getData = async (param) => {
+  const response = await fetch(`http://localhost:8000/monitoramento`);
+  return response.json();
+};
 
-const alunosFromFedd = alunos => alunos.map( item => `
-    <li class="card ${'normal'}">
-    <img class="card-image" alt=${item.nome} src="usuario.png"/>
-    <h2 class="card-title">${item.nome}</h2>
-    <p class="card-email">${item.email}</p>
-    </li>
-`).join('')
-
-const alunosFromSearch = alunos => alunos.map( item => `
-    <li class="card ${'normal'}">
-    <img class="card-image" alt=${item.nome} src="usuario.png"/>
-    <h2 class="card-title">${item.nome}</h2>
-    <p class="card-email">${item.email}</p>
-    </li>
+const dataToList = (alunos) =>
+  alunos
+    .map(
+      (item) => `
+    <tr>
+        <td>${item.temperatura}</td>
+        <td>${item.umidade}</td>
+        <td>${item.luminosidade}</td>
+        <td>${item.dispositivo}</td>
+    </tr>
 `
-).join('')
+    )
+    .join('');
 
-const earlyFedd = async () =>{
-    const alunos = await getPosts('orderBy=name&limite=20')
-    const postsTemplate = alunosFromFedd(alunos)
-    ul.innerHTML = postsTemplate ;
-}
+const alunosFromSearch = (data) =>
+  data
+    .map(
+      (item) => `
+      <tr>
+        <td>${item.temperatura}</td>
+        <td>${item.umidade}</td>
+        <td>${item.luminosidade}</td>
+        <td>${item.dispositivo}</td>
+    </tr>
+`
+    )
+    .join('');
 
-const searchAlunosIntoDOM = async (search) =>{
-    const alunos = await getPosts(`${'nome = '}${search}`)
-    const postsTemplate = alunosFromSearch(alunos)
-    ul.innerHTML = postsTemplate ;
-}
+const earlyFedd = async () => {
+  const dataFromApi = await getData('');
+  const dataTemplate = dataToList(dataFromApi);
+  table.innerHTML = dataTemplate;
+};
+
+const searchAlunosIntoDOM = async (search) => {
+  const dataFromApi = await getData(`${'dispositivo='}${search}`);
+  const dataTemplate = alunosFromSearch(dataFromApi);
+  console.log(dataTemplate);
+  table.innerHTML = dataTemplate;
+};
 
 // funçção que verifica o input "pesquisar alunos"
-const modifyInputValue = event => {
-    const inputvalue = event.target.value.toLowerCase();
-    if( inputvalue != '' ){
-        searchAlunosIntoDOM(inputvalue);
-    }else if (inputvalue=='' || inputvalue == null) {
-        earlyFedd();
-    }
-}
+const modifyInputValue = (event) => {
+  const inputvalue = event.target.value.toLowerCase();
+  if (inputvalue != '') {
+    searchAlunosIntoDOM(inputvalue);
+  } else if (inputvalue == '' || inputvalue == null) {
+    earlyFedd();
+  }
+};
 
 earlyFedd();
 
-filterImput.addEventListener('input', modifyInputValue)
+filterImput.addEventListener('input', modifyInputValue);

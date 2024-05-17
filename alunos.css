@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body{
+  height: 100%;
+}
+#title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#table-section h1{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+table{
+  width: 40%;
+}
+
+table tr{
+  width: 100%;
+}
+
+table th, td{
+  border: solid 2px black;
+  text-align: center;
+}
+
