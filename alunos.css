@@ -3,41 +3,90 @@
   padding: 0;
   box-sizing: border-box;
 }
-html,
-body{
+
+html, body {
   height: 100%;
+  font-family: 'Rubik', sans-serif;
+  background-color: #f4f4f4;
 }
-#title {
+
+header#title {
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 1em;
+  background-color: #4CAF50;
+  color: white;
 }
 
-
-.container{
-  width: 100%;
-  display: flex;
-  justify-content: center;
+main {
+  padding: 2em;
 }
 
-#table-section h1{
+#table-section {
+  margin-top: 1em;
+}
+
+#table-section h1 {
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 10px;
 }
 
-table{
-  width: 40%;
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
 }
 
-table tr{
+.filter {
   width: 100%;
+  max-width: 400px;
+  padding: 0.5em;
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
 
-table th, td{
-  border: solid 2px black;
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+table.showData {
+  width: 80%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table.showData th, table.showData td {
+  border: 1px solid #ddd;
   text-align: center;
+  padding: 0.5em;
 }
 
+table.showData th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+table.showData tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table.showData tr:hover {
+  background-color: #ddd;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  background-color: #4CAF50;
+  color: white;
+  bottom: 0;
+}

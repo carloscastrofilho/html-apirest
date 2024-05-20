@@ -15,13 +15,14 @@ const dataToList = (alunos) =>
   alunos
     .map(
       (item) => `
-    <tr>
+      <tr>
+        <td>${item.id}</td>
         <td>${item.temperatura}</td>
         <td>${item.umidade}</td>
         <td>${item.luminosidade}</td>
         <td>${item.dispositivo}</td>
-    </tr>
-`
+      </tr>
+    `
     )
     .join('');
 
@@ -30,6 +31,7 @@ const alunosFromSearch = (data) =>
     .map(
       (item) => `
       <tr>
+        <td>${item.id}</td>
         <td>${item.temperatura}</td>
         <td>${item.umidade}</td>
         <td>${item.luminosidade}</td>
@@ -42,13 +44,12 @@ const alunosFromSearch = (data) =>
 const earlyFedd = async () => {
   const dataFromApi = await getData('');
   const dataTemplate = dataToList(dataFromApi);
-  table.innerHTML = dataTemplate;
+  table.innerHTML += dataTemplate;
 };
 
 const searchAlunosIntoDOM = async (search) => {
   const dataFromApi = await getData(`${'dispositivo='}${search}`);
   const dataTemplate = alunosFromSearch(dataFromApi);
-  console.log(dataTemplate);
   table.innerHTML = dataTemplate;
 };
 
