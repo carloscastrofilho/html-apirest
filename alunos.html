@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>Alunos</title>
-        <link rel="stylesheet" href="./alunos.css" />
-        <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
-            rel="stylesheet" />
-          
-    </head>
-    <body>
-        <h1> Alunos </h1>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alunos</title>
+    <link rel="stylesheet" href="./alunos.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="title">
+      <h1>Monitoramento</h1>
+    </header>
+    <main>
+      <section id="table-section">
         <h1>
-            <center>
-                <div class="filter-container">
-                    <input type="text" id="filter"
-                        class="filter"
-                        placeholder="Pesquisar aluno" autofocus />
-                </div>
-            </center>
+          <div class="filter-container">
+            <input
+              type="text"
+              id="filter"
+              class="filter"
+              placeholder="Pesquisar dispositivo"
+              autofocus
+            />
+          </div>
         </h1>
         <div class="container">
-            <ul data-js="alunos" class="alunos"></ul>
+          <table class="showData">
+            <tr>
+              <th>Id</th>
+              <th>Temperatura</th>
+              <th>Umidade</th>
+              <th>Luminosidade</th>
+              <th>Dispositivo</th>
+            </tr>
+          </table>
         </div>
-        
-        <script src="alunos.js" type="module"></script>  
-    </body>
+      </section>
+    </main>
+    <footer>
+      <p>Fatec-Taquaritinga</p>
+      <p>Curso AMS</p>
+    </footer>
+    <script src="alunos.js" type="module"></script>
+  </body>
 </html>

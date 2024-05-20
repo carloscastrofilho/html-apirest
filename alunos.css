@@ -1,108 +1,92 @@
-/* CSS */
-body {
-  background: #f0694d;
-  background: linear-gradient(to right, rgb(121, 21, 21), rgb(147, 78, 168));
-  color: white;
+* {
   margin: 0;
-  font-family: rubik;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  padding: 40px;
-  margin: 0 auto;
+html, body {
+  height: 100%;
+  font-family: 'Rubik', sans-serif;
+  background-color: #f4f4f4;
 }
 
-h1 {
-  text-align: center;
-  font-size: 54px;
+header#title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  background-color: #4CAF50;
+  color: white;
+}
+
+main {
+  padding: 2em;
+}
+
+#table-section {
+  margin-top: 1em;
+}
+
+#table-section h1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
 .filter-container {
-  margin-top: 0px;
-  width: 80vw;
-  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
 }
 
 .filter {
   width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 0;
-  border-radius: 10px;
+  max-width: 400px;
+  padding: 0.5em;
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
 
-.alunos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 30px;
-  padding-inline-start: 0;
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.card {
-  list-style: none;
-  padding: 40px;
-  color: rgb(41, 37, 37);
+table.showData {
+  width: 80%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table.showData th, table.showData td {
+  border: 1px solid #ddd;
   text-align: center;
-  border-radius: 30px;
-  position: relative;
+  padding: 0.5em;
 }
 
-.normal {
-  border: solid 2px;
-  border-radius: 20px;
-  box-shadow: 4px 4px 4px 3px black;
+table.showData th {
+  background-color: #4CAF50;
+  color: white;
 }
 
-.card:hover {
-  animation: bounce 0.5s linear;
+table.showData tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
-.card-title {
-  text-transform: capitalize;
-  margin-bottom: 0px;
-  font-size: 32px;
-  font-weight: normal;
-  position: relative;
-  z-index: 2;
+table.showData tr:hover {
+  background-color: #ddd;
 }
 
-.card-description {
-  margin-top: 5px;
-  color: rgb(255, 255, 255);
-  font-weight: lighter;
-  position: relative;
-  z-index: 2;
-}
-
-.card-email {
-  margin-top: 5px;
-  color: rgb(255, 255, 255);
-  font-size: 26px;
-  font-weight: lighter;
-  position: relative;
-  z-index: 2;
-}
-
-.card-image {
-  height: 160px;
-  width: 150;
-  border: solid;
-  box-shadow: 0px 0px 8px 5px rgb(75, 2, 2);
-  position: relative;
-  z-index: 2;
-}
-
-@keyframes bounce {
-  20% {
-    transform: translateY(-6px);
-  }
-  40% {
-    transform: translateY(0px);
-  }
-  80% {
-    transform: translateY(-2px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  background-color: #4CAF50;
+  color: white;
+  bottom: 0;
 }
