@@ -50,14 +50,14 @@ header {
 
 .sidebar {
   width: 20%;
-  background-color: #fff;
+  background-color: #395360;
   height: 100%;
   position: absolute;
   right: 0;
 }
 
 .sidebar h3 {
-  color: #333;
+  color: #ffffff;
   font-size: 20px;
   margin: 10px;
 }
@@ -67,7 +67,17 @@ header {
   text-decoration: none;
   margin-left: 15px;
   margin-top: 20px;
-  color: #444;
+  color: #ffffff;
+}
+
+.sidebar h3:hover {
+  color: #aea8a8;
+  transition: all 0.6;
+}
+
+.sidebar a:hover {
+  color: #aea8a8;
+  transition: all 0.6;
 }
 
 .sidebar a > svg {
@@ -89,12 +99,12 @@ header {
 
 .content {
   width: 80%;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(215, 213, 213);
   margin-right: 20%;
 }
 
 .titulo-secao, .tabelaRegistros, .sidebar-mobile {
-  background-color: #938c8c;
+  background-color: #f5eded;
   border-radius: 10px;
   padding: 15px;
   margin: 30px 10px 0 10px;
@@ -142,7 +152,7 @@ header {
 }
 
 .bootstrap-style-table tr:nth-child(even) {
-  background-color: rgb(117, 111, 111);
+  background-color: rgb(179, 174, 174);
 }
 
 .alignItensColumn {
