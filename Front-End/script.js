@@ -1,5 +1,5 @@
 function getData() {
-    fetch("http://192.168.13.130:5000/monitoramento")
+    fetch("http://localhost:5000/monitoramento")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
